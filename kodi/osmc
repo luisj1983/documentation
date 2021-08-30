@@ -1,0 +1,4 @@
+1. Install OSMC via image
+2. Install pip3: sudo apt install pip3
+3. Update PIP wheel: sudo pip3 install wheel
+4. Follow steps fropm here: https://github.com/pimoroni/fanshim-python
