@@ -1,0 +1,11 @@
+## Install the keychain app
+sudo apt install keychain -y
+
+## Edit your .bashrc to invoke the keychain import on login
+
+nano .bashrc
+
+## Addthis line to the bottom
+eval `keychain --eval --agents ssh id_ed25519`
+
+## Then close your session and re-open it, providing your key's passphrase, if required.
