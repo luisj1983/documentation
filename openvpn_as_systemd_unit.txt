@@ -1,19 +1,19 @@
 
-This example uses PureVPN
+# This example uses PureVPN
 
-Download the .ovpn file to the client.
-Copy the file into: /etc/openvpn
-Rename file from .ovpn to .conf
+# Download the .ovpn file to the client.
+# Copy the file into: /etc/openvpn
+# Rename file from .ovpn to .conf
 
-Esnure that you have a txt file in that directory containing the VPN credentials
-Ensure that the .conf file has an entry pointing to those credentials:
+# Esnure that you have a txt file in that directory containing the VPN credentials
+#Ensure that the .conf file has an entry pointing to those credentials, e.g.:
 
 auth-user-pass /etc/openvpn/purevpn-auth.txt
 
-Lock down the auth file:
+# Lock down the auth file:
 
 sudo chmod 400 /etc/openvpn/purevpn-auth.txt
 
-Use the following command to enable the unit config:
+# Use the following command to enable the unit config:
 
 sudo openvpn --config /etc/openvpn/purevpn.ovpn --script-security 2 --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --dhcp-option 'DOMAIN-ROUTE .' --down-pre
