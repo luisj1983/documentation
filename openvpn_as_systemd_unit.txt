@@ -5,7 +5,7 @@
 # Copy the file into: /etc/openvpn
 # Rename file from .ovpn to .conf
 
-# Esnure that you have a txt file in that directory containing the VPN credentials
+# Ensure that you have a txt file in that directory containing the VPN credentials
 #Ensure that the .conf file has an entry pointing to those credentials, e.g.:
 
 auth-user-pass /etc/openvpn/purevpn-auth.txt
@@ -17,3 +17,7 @@ sudo chmod 400 /etc/openvpn/purevpn-auth.txt
 # Use the following command to enable the unit config:
 
 sudo openvpn --config /etc/openvpn/purevpn.ovpn --script-security 2 --up /etc/openvpn/update-resolv-conf --down /etc/openvpn/update-resolv-conf --dhcp-option 'DOMAIN-ROUTE .' --down-pre
+
+
+# systemd auto-start is set via and is set to "all" by default:
+sudo nano /etc/default/openvpn
